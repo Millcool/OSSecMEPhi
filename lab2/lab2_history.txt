@@ -1,0 +1,31 @@
+  1  cd /home/ilya/
+  2  mkdir test
+  3  cd test/
+  4  touch file
+  5  chmod 000 file
+  6  chmod 200 file
+  7  echo "тест" > file
+  8  chmod 240 file
+  9  chmod 640 file
+  10  ls -l file
+  11  mkdir dir && cd dir/ && touch new_file
+  12  cd ..
+  13  chmod 664 dir
+  14  cat dir/new_file
+  15  rmdir dir/new_file
+  16  chown root file
+  17  chgrp root file
+  18  umask 200
+  19  umask 066
+  20  rm -f file1
+  21  touch file1
+  22  ls -l file1
+  23  umask 000
+  24  touch file2
+  25  ls -l file2
+  26  su
+  27  cat file
+  28  cd ../Документы/OSS/lab2/
+  29  ls -lR > lab2_ls.txt
+  30  ls history > lab2_history.txt
+  31  history 50 > lab2_history.txt
