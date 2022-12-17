@@ -1,19 +1,6 @@
 #!/bin/bash
 
-touch /tmp/zeros /tmp/nozeros
-cat ~/bash.txt | while read line
-do
-	if [[ $line == *"000000"* ]]; then
-		echo "$line" >> /tmp/zeros
-	else
-		echo "$line" >> /tmp/nozeros
-	fi
-done
-
-head /tmp/zeros
-echo '/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/'
-tail /tmp/zeros
-echo -------------------------------------------------------
-head /tmp/zeros
-echo '/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/'
-tail /tmp/zeros
+cat bash.txt | grep "000000" > /tmp/zeros
+cat bash.txt | grep -v "000000" > /tmp/nozeros
+head -10 /tmp/zeros && tail -10 /tmp/zeros
+head -10 /tmp/nozeros && tail -10 /tmp/nozeros
