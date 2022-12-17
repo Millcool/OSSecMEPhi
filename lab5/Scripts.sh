@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ps -eo euid,ruid,comm | awk '{if ($1 != $2) print $3}'
+ps -eo euser,ruser,comm | awk '{if ($1 != $2) print $3}'
