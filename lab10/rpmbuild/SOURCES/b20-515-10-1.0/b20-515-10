@@ -1,0 +1,3 @@
+#!/bin/bashecho
+
+'date +%d-%m-%Y'
